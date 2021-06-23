@@ -24,7 +24,7 @@ ifneq "$(VERBOSE)$(V)" "00"
   MOS_BUILD_FLAGS_FINAL += --verbose
 endif
 
-build: Shelly1 Shelly1L Shelly1PM Shelly2 Shelly25 ShellyI3 ShellyPlug ShellyPlugS ShellyRGBW2 ShellyU ShellyU25
+build: Shelly1 Shelly1L Shelly1PM Shelly2 Shelly25 ShellyI3 ShellyPlug ShellyPlugS ShellyRGBW2 ShellyU ShellyU25 ShellyDimmer2
 
 release:
 	$(MAKE) build CLEAN=1 RELEASE=1
@@ -57,7 +57,10 @@ ShellyPlugS: build-ShellyPlugS
 
 ShellyRGBW2: build-ShellyRGBW2
 	@true
-
+	
+ShellyDimmer2: build-ShellyDimmer2
+	@true
+	
 ShellyU: PLATFORM=ubuntu
 ShellyU: build-ShellyU
 	@true
